@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Dashboard - AR Unique Pools</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo-area">
+      <img src="images/logo.jpg" alt="AR Unique Pools">
+      <h3>Seller Dashboard</h3>
+      <p style="font-size:.8rem;opacity:.7;">AR Unique Pools</p>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#overview" class="active" onclick="showDashSection('overview',this)"><span class="icon"><i class="fas fa-th-large"></i></span> Dashboard</a>
+      <a href="#wallet" onclick="showDashSection('wallet',this)"><span class="icon"><i class="fas fa-wallet"></i></span> Pi Wallet</a>
+      <a href="#products" onclick="showDashSection('products',this)"><span class="icon"><i class="fas fa-box"></i></span> Products</a>
+      <a href="#orders" onclick="showDashSection('orders',this)"><span class="icon"><i class="fas fa-shopping-cart"></i></span> Orders</a>
+      <a href="#delivery" onclick="showDashSection('delivery',this)"><span class="icon"><i class="fas fa-truck"></i></span> Delivery Settings</a>
+      <a href="#earnings" onclick="showDashSection('earnings',this)"><span class="icon"><i class="fas fa-chart-line"></i></span> Earnings</a>
+      <a href="index.html"><span class="icon"><i class="fas fa-home"></i></span> Back to Website</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dash-main">
+    <!-- Mobile menu button -->
+    <button onclick="toggleSidebar()" class="mobile-menu-btn" style="display:none;background:#0d47a1;color:#fff;padding:10px 15px;border-radius:8px;margin-bottom:15px;"><i class="fas fa-bars"></i> Menu</button>
+
+    <!-- Overview Section -->
+    <div id="overview" class="dash-section">
+      <div class="dash-header">
+        <h2>Dashboard Overview</h2>
+        <a href="order.html" class="btn btn-sm btn-primary" target="_blank"><i class="fas fa-external-link-alt"></i> View Store</a>
+      </div>
+
+      <!-- Wallet Alert -->
+      <div class="wallet-alert">
+        <div class="alert-box alert-warning">
+          <i class="fas fa-exclamation-triangle"></i>
+          <div>
+            <strong>Wallet not linked — Action required!</strong><br>
+            <span style="font-size:.9rem;">Link your Pi wallet to receive payouts. <a href="#wallet" onclick="showDashSection('wallet',document.querySelector('[href=\'#wallet\']'))" style="color:#e65100;font-weight:600;">Link Now</a></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="icon-bg" style="background:#e3f2fd;color:#1976d2;"><i class="fas fa-box"></i></div>
+          <div class="value" id="productCount">0</div>
+          <div class="label">Products</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon-bg" style="background:#fff3e0;color:#e65100;"><i class="fas fa-shopping-cart"></i></div>
+          <div class="value" id="orderCount">0</div>
+          <div class="label">Orders</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon-bg" style="background:#e8f5e9;color:#2e7d32;"><i class="fas fa-coins"></i></div>
+          <div class="value"><span id="earningsCount">0</span> &#960;</div>
+          <div class="label">&#960; Earnings</div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div style="display:flex;gap:15px;flex-wrap:wrap;margin-top:20px;">
+        <a href="#products" onclick="showDashSection('products',document.querySelector('[href=\'#products\']'))" class="btn btn-primary"><i class="fas fa-plus"></i> Add New Product</a>
+        <a href="#delivery" onclick="showDashSection('delivery',document.querySelector('[href=\'#delivery\']'))" class="btn btn-secondary"><i class="fas fa-cog"></i> Delivery Settings</a>
+      </div>
+
+      <!-- Recent Orders -->
+      <div style="margin-top:30px;">
+        <h3 style="color:#1a237e;margin-bottom:15px;">Recent Orders</h3>
+        <div style="overflow-x:auto;">
+          <table class="orders-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Items</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="ordersBody">
+              <tr><td colspan="7" style="text-align:center;color:#888;padding:30px;">No orders yet.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wallet Section -->
+    <div id="wallet" class="dash-section" style="display:none;">
+      <div class="dash-header">
+        <h2>Pi Wallet</h2>
+      </div>
+      <div class="wallet-form">
+        <h3>Link Your Pi Wallet</h3>
+        <p>Link your Pi wallet to receive payouts from your sales.</p>
+        <div class="form-group">
+          <label>Pi Wallet Address</label>
+          <input type="text" id="walletAddress" placeholder="Enter your Pi wallet public address (56 characters starting with G)" maxlength="56">
+          <p class="note"><i class="fas fa-info-circle"></i> Enter your Pi wallet <strong>public address</strong> (56 characters starting with G). <strong>Never share your passphrase or private key.</strong></p>
+        </div>
+        <button onclick="linkWallet()" class="btn btn-primary"><i class="fas fa-link"></i> Link Wallet Address</button>
+
+        <div style="margin-top:30px;padding:20px;background:#f5f5f5;border-radius:10px;">
+          <h4 style="color:#1a237e;margin-bottom:10px;">Wallet Status</h4>
+          <p><strong>Status:</strong> <span id="walletStatus" style="color:#c62828;">Not Linked</span></p>
+          <p style="color:#888;font-size:.85rem;margin-top:8px;">Once linked, all your sales earnings will be sent to this wallet address.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Section -->
+    <div id="products" class="dash-section" style="display:none;">
+      <div class="dash-header">
+        <h2>Manage Products</h2>
+      </div>
+
+      <!-- Add Product Form -->
+      <div class="product-form" style="margin-bottom:30px;">
+        <h3>Add New Product</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <div class="form-group">
+            <label>Product Name *</label>
+            <input type="text" id="productName" placeholder="e.g., Luna Luxury Spa 12x8x4.2">
+          </div>
+          <div class="form-group">
+            <label>Price (&#960;) *</label>
+            <input type="number" id="productPrice" placeholder="e.g., 500" step="0.01" min="0">
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select id="productCategory">
+              <option value="pool">Swimming Pool</option>
+              <option value="spa">Jacuzzi / SPA</option>
+              <option value="filter">Pipeless Filter</option>
+              <option value="accessory">Pool Accessory</option>
+              <option value="cover">Pool Cover / Deck</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Product Image</label>
+            <input type="file" id="productImage" accept="image/*" onchange="previewImage(this)">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="productDesc" rows="3" placeholder="Describe your product features, dimensions, etc."></textarea>
+        </div>
+        <div id="imagePreview" class="image-upload" style="margin-bottom:15px;cursor:default;">
+          <p>&#128247; Image preview will appear here</p>
+        </div>
+        <button onclick="addProduct()" class="btn btn-primary"><i class="fas fa-plus"></i> Add Product</button>
+      </div>
+
+      <!-- Product List -->
+      <h3 style="color:#1a237e;margin-bottom:15px;">Your Products (<span id="productCount">0</span>)</h3>
+      <div id="productsList" class="product-grid">
+        <p style="text-align:center;color:#888;padding:40px;">No products added yet. Add your first product above.</p>
+      </div>
+    </div>
+
+    <!-- Orders Section -->
+    <div id="orders" class="dash-section" style="display:none;">
+      <div class="dash-header">
+        <h2>Orders</h2>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Items</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="ordersBody">
+            <tr><td colspan="7" style="text-align:center;color:#888;padding:30px;">No orders yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Delivery Settings Section -->
+    <div id="delivery" class="dash-section" style="display:none;">
+      <div class="dash-header">
+        <h2>Delivery Settings</h2>
+      </div>
+      <div class="product-form">
+        <h3>Configure Delivery Options</h3>
+        <div class="form-group">
+          <label>Delivery Method</label>
+          <select id="deliveryMethod">
+            <option value="standard">Standard Delivery (7-10 days)</option>
+            <option value="express">Express Delivery (3-5 days)</option>
+            <option value="pickup">Self Pickup</option>
+            <option value="custom">Custom / On-site Installation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Delivery Charge (&#960;)</label>
+          <input type="number" id="deliveryCharge" value="50" min="0" step="1">
+        </div>
+        <div class="form-group">
+          <label>Estimated Delivery Time (days)</label>
+          <input type="number" id="deliveryTime" value="7" min="1">
+        </div>
+        <button onclick="saveDeliverySettings()" class="btn btn-primary"><i class="fas fa-save"></i> Save Settings</button>
+      </div>
+    </div>
+
+    <!-- Earnings Section -->
+    <div id="earnings" class="dash-section" style="display:none;">
+      <div class="dash-header">
+        <h2>Earnings</h2>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="icon-bg" style="background:#e8f5e9;color:#2e7d32;"><i class="fas fa-coins"></i></div>
+          <div class="value"><span id="earningsCount">0</span> &#960;</div>
+          <div class="label">Total Earnings</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon-bg" style="background:#e3f2fd;color:#1976d2;"><i class="fas fa-shopping-cart"></i></div>
+          <div class="value" id="orderCount">0</div>
+          <div class="label">Total Orders</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon-bg" style="background:#fff3e0;color:#e65100;"><i class="fas fa-box"></i></div>
+          <div class="value" id="productCount">0</div>
+          <div class="label">Total Products</div>
+        </div>
+      </div>
+
+      <div style="margin-top:30px;background:#fff;padding:30px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.06);">
+        <h3 style="color:#1a237e;margin-bottom:15px;">Earnings Summary</h3>
+        <p style="color:#666;">Your earnings are calculated based on completed orders. All payouts are made to your linked Pi wallet address.</p>
+        <div style="margin-top:20px;padding:20px;background:#e8f5e9;border-radius:8px;">
+          <p style="color:#2e7d32;"><i class="fas fa-info-circle"></i> Earnings are updated in real-time as orders are placed.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+// Dashboard section navigation
+function showDashSection(sectionId, clickedLink) {
+  // Hide all sections
+  document.querySelectorAll('.dash-section').forEach(function(s) { s.style.display = 'none'; });
+  // Show target
+  var target = document.getElementById(sectionId);
+  if (target) target.style.display = 'block';
+  // Update active nav
+  document.querySelectorAll('.sidebar-nav a').forEach(function(a) { a.classList.remove('active'); });
+  if (clickedLink) clickedLink.classList.add('active');
+  // Close mobile sidebar
+  var sidebar = document.querySelector('.sidebar');
+  if (sidebar && window.innerWidth <= 768) sidebar.classList.remove('active');
+  // Refresh data
+  renderProducts();
+  renderOrders();
+  updateDashboardStats();
+  updateWalletUI();
+}
+
+// Init
+document.addEventListener('DOMContentLoaded', function() {
+  renderProducts();
+  renderOrders();
+  updateDashboardStats();
+  updateWalletUI();
+});
+</script>
+</body>
+</html>
