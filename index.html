@@ -1,160 +1,277 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Unique Pools - Luxury Swimming Pool Experts</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; }
-        header { background: #2824dd; color:white; padding: 20px; text-align: center; }
-        logo { height: 80px; }
-        nav { background: #007bff; }
-        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
-        nav ul li { margin: 10px; }
-        nav ul li a { color: white; text-decoration: none; padding: 10px 20px; display: block; }
-        nav ul li a:hover { background: #0056b3; border-radius: 5px; }
-        section { padding: 60px 20px; text-align: center; }
-        #home { background: url('https://www.extraspace.com/wp-content/uploads/2022/03/luxury-pool-inspiration-ideas.jpg') no-repeat center center/cover; color: white; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-        .overlay { background: rgba(119, 9, 9, 0.5);  padding: 40px; border-radius: 10px; }
-        h1 { font-size: 3em; margin-bottom: 20px; }
-        h2 { font-size: 2.5em; margin-bottom: 30px; color: #007bff; }
-        .services-grid, .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: #7104d686; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .card img { width: 100%; border-radius: 10px; }
-        .btn { background: #007bff; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px; }
-        .btn:hover { background: #0056b3; }
-        form { max-width: 600px; margin: 0 auto; text-align: left; }
-        input, textarea { width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-        footer { background: #34003fe0; color: white; padding: 20px; text-align: center; }
-        @media (max-width: 768px) { h1 { font-size: 2.5em; } }
-    </style>
- </head>
- <body>
- 	<header>
-  <nav>
-	<ul>
-            	<li><a href="#home">Home</a></li>
-            	<li><a href="#services">Services</a></li>
-            	<li><a href="#portfolio">Portfolio</a></li>
-            	<li><a href="#about">About Us</a></li>
-            	<li><a href="#contact">Inquiry/Contact</a></li>
-       </ul>
-      		</nav>
-		<h1>Welcome to Ar Unique Pools</h1>
-		<img src="C:\Users\vic\Desktop\Statics HTML code\Ar Unique Pool Main Page.jpeg" ali="AR UNIQUE POOL.HTML"width="1250" height="1450">
-            </header>
-           	
-	<section id="home">
-        <div class="overlay">
-	<h1>Welcome To Home</h1>
-  <img src="C:\Users\vic\Desktop\Statics HTML code\Image 2026-01-10 at 5.57.44 PM.jpeg"ali="AR UNIQUE POOL.HTML"width="1175" height="1500">   
-  </header>
-<video width="900px" height="300" loop muted autoplay="autoplay"controls>
-	<source src="C:\Users\vic\Desktop\Statics HTML code\Video 2026-01-10.mp4">
-</video>
+    <title>AR Unique Pools - Luxury Swimming Pool Manufacturer in India</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
-	<section id="services">
-        
-		<h1>Our Services</h1>
-			<img src="C:\Users\vic\Desktop\Statics HTML code\image.jpeg" alt="AR Unique Pools Logo" class="logo"ali="AR UNIQUE POOL.HTML"width="1150" height="1500">
-           </header>
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="contact-info">
+        <span><i class="fas fa-phone"></i> +91-9068993383</span>
+        <span><i class="fas fa-envelope"></i> aruniquepools@gmail.com</span>
+    </div>
+    <div class="social-links">
+        <a href="https://www.facebook.com/aruniquepools" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/aruniquepools" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@aruniquepools" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919068993383" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/company/aruniquepools" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/aruniquepools" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+</div>
 
+<!-- Header & Navigation -->
+<header>
+    <div class="logo-area">
+        <img src="assets/images/logo.jpg" alt="AR Unique Pools Logo">
+        <div>
+            <h1>AR Unique Pools</h1>
+            <span>Luxury Swimming Pool Experts</span>
+        </div>
+    </div>
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+        <i class="fas fa-bars"></i>
+    </button>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li>
+                <a href="#">About <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="company-detail.html">Company Detail</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="certification.html">Certification</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Services <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="services.html#readymade">Readymade Swimming Pool</a></li>
+                    <li><a href="services.html#jacuzzi">Jacuzzi Tubs and SPA</a></li>
+                    <li><a href="services.html#prefabricated">Prefabricated Swimming Pool</a></li>
+                    <li><a href="services.html#aqua-therapy">Aqua Therapy / Hydrotherapy Pool</a></li>
+                    <li><a href="services.html#pipeless-filter">Swimming Pool Pipeless Filter</a></li>
+                    <li><a href="services.html#accessories">Swimming Pool Accessories</a></li>
+                    <li><a href="services.html#rooftop">Rooftop Swimming Pool</a></li>
+                    <li><a href="services.html#exhibition-pool">Exhibition Swimming Pool</a></li>
+                    <li><a href="services.html#export">Export Swimming Pool</a></li>
+                    <li><a href="services.html#cover-deck">Full Cover Fitting Cover & Movable Deck</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Gallery <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="gallery.html">Image Gallery</a></li>
+                    <li><a href="video-gallery.html">Video Gallery</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="exhibition.html">Exhibition</a></li>
+            <li><a href="seller-dashboard.html">Seller Dashboard</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <div class="services-grid">
+<!-- Hero Section -->
+<section class="hero" style="background-image:url('assets/images/main-page.jpeg');">
+    <div class="hero-content">
+        <h2>Welcome to AR Unique Pools</h2>
+        <p>India's Leading Fiberglass Composite Swimming Pool Manufacturer. We offer 10+ exclusive models with designer finishes.</p>
+        <a href="services.html" class="btn btn-primary">Explore Our Services</a>
+        <a href="contact.html" class="btn btn-secondary" style="margin-left:10px;">Get a Quote</a>
+    </div>
+</section>
+
+<!-- Pool Images Showcase -->
+<section class="section section-light">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Swimming Pools</h2>
+            <p>Discover our range of luxury fiberglass composite swimming pools</p>
+        </div>
+        <div class="grid grid-3">
             <div class="card">
-                <img src="C:\Users\vic\Desktop\Statics HTML code\Luna Luxury Spa 12x8x4.2.jpg" alt="Pool Construction"ali="AR UNIQUE POOL.HTML"width="200" height="250">
-                <h3> Fiberglass Composite Swimming Pool Luna Luxury Spa 12x8x4.2</h3>
-                <p> Warm water has always been known for its therapeutic and rejuvenating effects. Just a few minutes in a spa can help reduce stress, relax your body, improve sleep quality, and ease back pain or arthritis discomfort.
-   Hot tubs are large tubs or compact pools filled with heated water, designed for relaxation, therapy, and social enjoyment. They generally feature advanced heating systems, powerful massage jets, and durable fiberglass construction. Suitable for both indoor and outdoor spaces, hot tubs usually include comfortable seating for multiple people, making them perfect for families or groups.
-   </p>
+                <img src="assets/images/home-pool.jpeg" alt="AR Unique Pools - Swimming Pool">
+                <div class="card-body">
+                    <h3>Premium Pool Designs</h3>
+                    <p>Customized fiberglass composite swimming pools with glass mosaic and stone finishes.</p>
+                </div>
             </div>
             <div class="card">
-
-                <img src="C:\Users\vic\Desktop\Statics HTML code\prefabricated fiberglass or FRP (Fiber Reinforced Plastic) swimming pool.jpg" alt="Maintenance"ali="AR UNIQUE POOL.HTML"width="200" height="250">
-                <h3>Fiberglass Horzon Spa Luxury pool 9x7x3.5</h3>
-                <p>You can install a SPA next to your pool to produce a tranquil, natural waterfall impression. SWIM SPA gives extra leisure space for outdoor enjoyment across various gathering spaces when installed separately from the pool.You can perfectly match the colour of your custom pool and spa combination because every spa collection is available in the same colour selections as our composite fibreglass. Hot Tub is an enormous tub or little pool loaded with warmed water and can be utilized for hydrotherapy..</p>
+                <img src="assets/images/pool-image.jpeg" alt="Pool Design">
+                <div class="card-body">
+                    <h3>Luxury Pool Collection</h3>
+                    <p>Wide range of designer swimming pools for residential and commercial use.</p>
+                </div>
             </div>
             <div class="card">
-
-                <img src="C:\Users\vic\Desktop\Statics HTML code\Opal Luxury Spa 20x8x4.2.jpg" alt="Renovation"ali="AR UNIQUE POOL.HTML"width="300" height="250">
-                <h3>Opal Luxury Spa  siz 20x8x4.2</h3>
- <p>Swimming pool users understand how essential a reliable filtration system is. With this in mind, we have developed advanced pipeless filters that incorporate the latest technology. As a leading manufacturer, we offer a wide range of pipeless filters in various sizes and designs to suit different pool requirements. Our premium-quality pipeless filters are supplied across India and internationally, ensuring an exceptional user experience.
-    Pipeless filters, also known as cartridge filters, are a modern alternative to traditional sand or DE filtration systems. Instead of using sand or diatomaceous earth, these filters use a pleated polyester cartridge that effectively traps debris and contaminants from the pool water.
-    One of the key benefits of pipeless filters is their superior energy efficiency. They operate with lower water flow and pressure, helping to reduce overall energy consumption. Additionally, they require minimal maintenance since they eliminate frequent backwashing and reduce cleaning efforts, ultimately lowering long-term pool maintenance costs
-  </P>
+                <img src="assets/images/luna-luxury-spa.jpg" alt="Luna Luxury Spa">
+                <div class="card-body">
+                    <h3>Luna Luxury Spa</h3>
+                    <p>Experience ultimate relaxation with our premium spa and jacuzzi tubs.</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-     <section id="portfolio">
-        <h2>Our Portfolio</h2>
-        <div class="portfolio-grid">
-            <div class="card">
-                <h3>Image 1</h3>
-                <p></p>
-                <img src="C:/Users/vic/Desktop/Statics%20HTML%20code/Wall%20Panels%20%20Brackets.jpg" alt="Before"ali="AR UNIQUE POOL.HTML"width="200" height="500">
-                <p></p>
-                <img src="C:\Users\vic\Desktop\Statics HTML code\pool image.jpeg" alt="After"ali="AR UNIQUE POOL.HTML"width="200" height="500">
-            </div>
-            <div class="card">
-                <h3>Image 2</h3>
-                
-                <img src="C:/Users/vic/Desktop/Statics%20HTML%20code/WhatsApp%20Image%202026-01-09%20at%205.51.13%20PM%20(1).jpeg" alt="Before"ali="AR UNIQUE POOL.HTML"width="200" height="500">
-                
-                <img src="C:\Users\vic\Desktop\Statics HTML code\Swimming Pool Wall Panels & Brackets.jpg" alt="After"ali="AR UNIQUE POOL.HTML"width="200" height="500">
-            </div>
-            <div class="card">
-                <h3>Image 3</h3>
-                <p></p>
-                <img src="C:/Users/vic/Desktop/Statics%20HTML%20code/WhatsApp%20Image%202026-01-09%20at%205.51.13%20PM.jpeg" alt="Before"ali="AR UNIQUE POOL.HTML"width="200" height="500">
-                <p></p>
-                <img src="C:/Users/vic/Desktop/Statics%20HTML%20code/WhatsApp%20Image%202026-01-09%20at%205.51.14%20PM.jpeg" alt="After"ali="AR UNIQUE POOL.HTML"width="200" height="500">
+<!-- Video Section -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-title">
+            <h2>Watch Our Work</h2>
+            <p>See our swimming pools in action</p>
+        </div>
+        <div style="max-width:800px;margin:0 auto;">
+            <div class="video-item">
+                <video controls style="width:100%;border-radius:12px;">
+                    <source src="assets/videos/pool-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption" style="text-align:center;padding:15px;">
+                    <h4>AR Unique Pools - Manufacturing & Installation</h4>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <img src="C:\Users\vic\Desktop\Statics HTML code\Logo  1024x1024 px Ar unique pools.jpg"alt="Our Team" style="width:80%; max-width:700px; border-radius:10px; margin:20px 0;">
-        <p>  AR UNIQUE POOLS
-	AR UNIQUE POOLS – India's Leading Fiberglass Composite Swimming Pool Manufacturer
-	AR UNIQUE POOLS is a leading manufacturer of fiberglass composite swimming pools in India, offering over 10 exclusive models and designs. We are proud to have introduced designer swimming pools with glass mosaic and stone finishes to the industry – a true blend of beauty, technology, and innovation
-.</p>
-	<p>Our team of experts ensures every project is completed with perfection.</p>
-    </section>
-<p style="margin-top:30px;">Call us: +91-9068993383 | Email: aruniquepools@gmail.com</p>
-    		</section>
+<!-- Services Preview -->
+<section class="section section-gray">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Complete swimming pool solutions from manufacturing to installation</p>
+        </div>
+        <div class="grid grid-4">
+            <div class="card">
+                <img src="assets/images/prefab-pool.jpg" alt="Readymade Swimming Pool">
+                <div class="card-body">
+                    <h3>Readymade Swimming Pool</h3>
+                    <p>Ready-to-install fiberglass pools in multiple sizes and designs.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/luna-luxury-spa.jpg" alt="Jacuzzi Tubs & SPA">
+                <div class="card-body">
+                    <h3>Jacuzzi Tubs & SPA</h3>
+                    <p>Premium jacuzzi and spa systems for ultimate relaxation.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/opal-luxury-spa.jpg" alt="Prefabricated Pool">
+                <div class="card-body">
+                    <h3>Prefabricated Swimming Pool</h3>
+                    <p>Quick installation pools with advanced filtration systems.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/wall-panels.jpg" alt="Pool Accessories">
+                <div class="card-body">
+                    <h3>Pool Accessories</h3>
+                    <p>Wall panels, brackets, filters, and all pool essentials.</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:40px;">
+            <a href="services.html" class="btn btn-outline">View All Services</a>
+        </div>
+    </div>
+</section>
 
-    <section id="contact">
-        <h2>Get in Touch - Inquiry Form</h2>
-        <form action="https://formspree.io/f/your-email" method="POST"> <!-- अपना Formspree या अन्य सर्विस का लिंक डालें -->
-    <label>Name</label>
-      <input type="text" name="name" required placeholder="Your Full Name">
-         <label>Email</label>
-           <input type="email" name="email" required placeholder="Your Email">
-             <label>Contact Number</label>
-            	<input type="tel" name="phone" required placeholder="Your Phone Number">
-            
-            	<label>Message</label>
-            	<textarea name="message" rows="5" placeholder="Tell us about your pool project"></textarea>
-           	 <button type="submit" class="btn">Send Inquiry</button>
-       		 </form>
-           	<footer>
+<!-- About Preview -->
+<section class="section section-light">
+    <div class="container">
+        <div style="display:flex;gap:40px;align-items:center;flex-wrap:wrap;">
+            <div style="flex:1;min-width:300px;">
+                <img src="assets/images/services-hero.jpeg" alt="About AR Unique Pools" style="border-radius:12px;width:100%;box-shadow:0 8px 25px rgba(0,0,0,.15);">
+            </div>
+            <div style="flex:1;min-width:300px;">
+                <h2 style="font-size:2.2em;color:#0a1628;margin-bottom:20px;">About AR Unique Pools</h2>
+                <p style="color:#555;line-height:1.8;margin-bottom:15px;">AR UNIQUE POOLS is a leading manufacturer of fiberglass composite swimming pools in India, offering over 10 exclusive models and designs.</p>
+                <p style="color:#555;line-height:1.8;margin-bottom:25px;">We are proud to have introduced designer swimming pools with glass mosaic and stone finishes to the industry - a true blend of beauty, technology, and innovation.</p>
+                <a href="company-detail.html" class="btn btn-primary">Learn More About Us</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-        
-	<p>&copy; 2024 AR Unique Pools. All Rights Reserved.</p>
-   </footer>
+<!-- CTA Section -->
+<section class="section section-dark" style="text-align:center;background:linear-gradient(135deg,#0a1628,#00b4d8);">
+    <div class="container">
+        <h2 style="font-size:2.5em;margin-bottom:15px;">Ready to Build Your Dream Pool?</h2>
+        <p style="opacity:.9;font-size:1.1em;margin-bottom:30px;">Contact us today for a free consultation and quote</p>
+        <a href="contact.html" class="btn btn-secondary">Contact Us Now</a>
+    </div>
+</section>
 
-    <script>
-        // स्मूथ स्क्रॉलिंग
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>AR Unique Pools</h3>
+                <p>India's leading fiberglass composite swimming pool manufacturer with 10+ exclusive models and designs.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/aruniquepools" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/aruniquepools" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@aruniquepools" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/919068993383" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/company/aruniquepools" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/aruniquepools" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="company-detail.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="services.html#readymade">Readymade Swimming Pool</a></li>
+                    <li><a href="services.html#jacuzzi">Jacuzzi Tubs & SPA</a></li>
+                    <li><a href="services.html#prefabricated">Prefabricated Pool</a></li>
+                    <li><a href="services.html#rooftop">Rooftop Swimming Pool</a></li>
+                    <li><a href="services.html#accessories">Pool Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +91-9068993383</p>
+                <p><i class="fas fa-envelope"></i> aruniquepools@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AR Unique Pools. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+</script>
 </body>
+</html>
