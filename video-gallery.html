@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery - AR Unique Pools</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="contact-info">
+        <span><i class="fas fa-phone"></i> +91-9068993383</span>
+        <span><i class="fas fa-envelope"></i> aruniquepools@gmail.com</span>
+    </div>
+    <div class="social-links">
+        <a href="https://www.facebook.com/aruniquepools" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/aruniquepools" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@aruniquepools" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919068993383" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/company/aruniquepools" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/aruniquepools" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+</div>
+
+<!-- Header -->
+<header>
+    <div class="logo-area">
+        <img src="assets/images/logo.jpg" alt="AR Unique Pools Logo">
+        <div><h1>AR Unique Pools</h1><span>Luxury Swimming Pool Experts</span></div>
+    </div>
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')"><i class="fas fa-bars"></i></button>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">About <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="company-detail.html">Company Detail</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="certification.html">Certification</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Services <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="services.html#readymade">Readymade Swimming Pool</a></li>
+                    <li><a href="services.html#jacuzzi">Jacuzzi Tubs and SPA</a></li>
+                    <li><a href="services.html#prefabricated">Prefabricated Swimming Pool</a></li>
+                    <li><a href="services.html#aqua-therapy">Aqua Therapy / Hydrotherapy Pool</a></li>
+                    <li><a href="services.html#pipeless-filter">Swimming Pool Pipeless Filter</a></li>
+                    <li><a href="services.html#accessories">Swimming Pool Accessories</a></li>
+                    <li><a href="services.html#rooftop">Rooftop Swimming Pool</a></li>
+                    <li><a href="services.html#exhibition-pool">Exhibition Swimming Pool</a></li>
+                    <li><a href="services.html#export">Export Swimming Pool</a></li>
+                    <li><a href="services.html#cover-deck">Full Cover Fitting Cover & Movable Deck</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="active">Gallery <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="gallery.html">Image Gallery</a></li>
+                    <li><a href="video-gallery.html">Video Gallery</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="exhibition.html">Exhibition</a></li>
+            <li><a href="seller-dashboard.html">Seller Dashboard</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Page Banner -->
+<div class="page-banner">
+    <h2>Video Gallery</h2>
+    <p class="breadcrumb"><a href="index.html">Home</a> / Gallery / Video Gallery</p>
+</div>
+
+<!-- Video Gallery -->
+<section class="section section-light">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Pool Videos</h2>
+            <p>Watch our swimming pool manufacturing, installation, and completed projects</p>
+        </div>
+        <div class="video-grid">
+            <!-- Video 1 -->
+            <div class="video-item">
+                <video controls poster="assets/images/main-page.jpeg">
+                    <source src="assets/videos/pool-video.mp4" type="video/mp4">
+                    <!-- Video path: assets/videos/pool-video.mp4 -->
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption">
+                    <h4>Swimming Pool Manufacturing Process</h4>
+                    <p style="color:#666;font-size:.9em;">See how we manufacture our premium fiberglass composite pools</p>
+                </div>
+            </div>
+            <!-- Video 2 - Placeholder for additional videos -->
+            <div class="video-item">
+                <video controls poster="assets/images/pool-image.jpeg">
+                    <source src="assets/videos/pool-video.mp4" type="video/mp4">
+                    <!-- Add more videos: assets/videos/video-2.mp4 -->
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption">
+                    <h4>Pool Installation Process</h4>
+                    <p style="color:#666;font-size:.9em;">Complete installation from start to finish</p>
+                </div>
+            </div>
+            <!-- Video 3 - Placeholder -->
+            <div class="video-item">
+                <video controls poster="assets/images/luna-luxury-spa.jpg">
+                    <source src="assets/videos/pool-video.mp4" type="video/mp4">
+                    <!-- Add more videos: assets/videos/video-3.mp4 -->
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption">
+                    <h4>Jacuzzi & SPA Demo</h4>
+                    <p style="color:#666;font-size:.9em;">Our luxury spa systems in action</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:30px;padding:20px;background:#f0f4f8;border-radius:12px;">
+            <p style="color:#666;">Add more videos to <code>assets/videos/</code> folder and update the <code>src</code> paths above. Each video needs its own unique file.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>AR Unique Pools</h3>
+                <p>India's leading fiberglass composite swimming pool manufacturer.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/aruniquepools" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/aruniquepools" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@aruniquepools" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/919068993383" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="company-detail.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +91-9068993383</p>
+                <p><i class="fas fa-envelope"></i> aruniquepools@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AR Unique Pools. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

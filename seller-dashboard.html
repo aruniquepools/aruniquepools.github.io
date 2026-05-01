@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - AR Unique Pools</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="contact-info">
+        <span><i class="fas fa-phone"></i> +91-9068993383</span>
+        <span><i class="fas fa-envelope"></i> aruniquepools@gmail.com</span>
+    </div>
+    <div class="social-links">
+        <a href="https://www.facebook.com/aruniquepools" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/aruniquepools" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@aruniquepools" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919068993383" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/company/aruniquepools" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/aruniquepools" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+</div>
+
+<!-- Header -->
+<header>
+    <div class="logo-area">
+        <img src="assets/images/logo.jpg" alt="AR Unique Pools Logo">
+        <div><h1>AR Unique Pools</h1><span>Luxury Swimming Pool Experts</span></div>
+    </div>
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')"><i class="fas fa-bars"></i></button>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">About <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="company-detail.html">Company Detail</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="certification.html">Certification</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Services <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="services.html#readymade">Readymade Swimming Pool</a></li>
+                    <li><a href="services.html#jacuzzi">Jacuzzi Tubs and SPA</a></li>
+                    <li><a href="services.html#prefabricated">Prefabricated Swimming Pool</a></li>
+                    <li><a href="services.html#aqua-therapy">Aqua Therapy / Hydrotherapy Pool</a></li>
+                    <li><a href="services.html#pipeless-filter">Swimming Pool Pipeless Filter</a></li>
+                    <li><a href="services.html#accessories">Swimming Pool Accessories</a></li>
+                    <li><a href="services.html#rooftop">Rooftop Swimming Pool</a></li>
+                    <li><a href="services.html#exhibition-pool">Exhibition Swimming Pool</a></li>
+                    <li><a href="services.html#export">Export Swimming Pool</a></li>
+                    <li><a href="services.html#cover-deck">Full Cover Fitting Cover & Movable Deck</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Gallery <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="gallery.html">Image Gallery</a></li>
+                    <li><a href="video-gallery.html">Video Gallery</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="exhibition.html">Exhibition</a></li>
+            <li><a href="seller-dashboard.html" class="active">Seller Dashboard</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Page Banner -->
+<div class="page-banner">
+    <h2>Seller Dashboard</h2>
+    <p class="breadcrumb"><a href="index.html">Home</a> / Seller Dashboard</p>
+</div>
+
+<!-- Login Section (shown by default) -->
+<section class="section section-light" id="login-section">
+    <div class="container" style="max-width:500px;">
+        <div class="card" style="padding:40px;">
+            <h2 style="text-align:center;color:#0a1628;margin-bottom:25px;"><i class="fas fa-user-circle" style="color:#00b4d8;"></i> Seller Login</h2>
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email / Username</label>
+                    <input type="text" id="login-email" required placeholder="Enter your email or username">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="login-password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Login to Dashboard</button>
+                <p style="text-align:center;margin-top:15px;color:#666;font-size:.9em;">
+                    Don't have an account? <a href="#" onclick="showRegister()" style="color:#00b4d8;">Register here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Register Section (hidden by default) -->
+<section class="section section-light" id="register-section" style="display:none;">
+    <div class="container" style="max-width:500px;">
+        <div class="card" style="padding:40px;">
+            <h2 style="text-align:center;color:#0a1628;margin-bottom:25px;"><i class="fas fa-user-plus" style="color:#00b4d8;"></i> Seller Registration</h2>
+            <form id="register-form" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="reg-name" required placeholder="Your Full Name">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="reg-email" required placeholder="Your Email Address">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="reg-phone" required placeholder="Your Phone Number">
+                </div>
+                <div class="form-group">
+                    <label>Company Name</label>
+                    <input type="text" id="reg-company" placeholder="Your Company Name">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="reg-password" required placeholder="Create a password">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Register</button>
+                <p style="text-align:center;margin-top:15px;color:#666;font-size:.9em;">
+                    Already have an account? <a href="#" onclick="showLogin()" style="color:#00b4d8;">Login here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Dashboard Section (hidden by default, shown after login) -->
+<section class="section section-gray" id="dashboard-section" style="display:none;">
+    <div class="container">
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <div class="dashboard-sidebar">
+                <h3><i class="fas fa-tachometer-alt"></i> Dashboard</h3>
+                <ul>
+                    <li><a href="#" class="active" onclick="showTab('overview')"><i class="fas fa-chart-line"></i> Overview</a></li>
+                    <li><a href="#" onclick="showTab('products')"><i class="fas fa-box"></i> My Products</a></li>
+                    <li><a href="#" onclick="showTab('orders')"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                    <li><a href="#" onclick="showTab('inquiries')"><i class="fas fa-envelope"></i> Inquiries</a></li>
+                    <li><a href="#" onclick="showTab('profile')"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="#" onclick="handleLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="dashboard-main">
+                <!-- Overview Tab -->
+                <div id="tab-overview">
+                    <h2 style="margin-bottom:20px;">Welcome, <span id="seller-name">Seller</span></h2>
+                    <div class="stat-cards">
+                        <div class="stat-card">
+                            <h4>Total Products</h4>
+                            <div class="number">12</div>
+                        </div>
+                        <div class="stat-card" style="background:linear-gradient(135deg,#00b4d8,#48cae4);">
+                            <h4>Total Orders</h4>
+                            <div class="number">48</div>
+                        </div>
+                        <div class="stat-card" style="background:linear-gradient(135deg,#0077b6,#023e8a);">
+                            <h4>Inquiries</h4>
+                            <div class="number">25</div>
+                        </div>
+                        <div class="stat-card" style="background:linear-gradient(135deg,#2d6a4f,#40916c);">
+                            <h4>Revenue</h4>
+                            <div class="number">&#8377;5.2L</div>
+                        </div>
+                    </div>
+                    <h3 style="margin-bottom:15px;">Recent Orders</h3>
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Product</th>
+                                <th>Customer</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-001</td>
+                                <td>Readymade Pool 12x6</td>
+                                <td>Rahul Sharma</td>
+                                <td>&#8377;2,50,000</td>
+                                <td><span class="status-badge status-active">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-002</td>
+                                <td>Luna Luxury Spa</td>
+                                <td>Priya Gupta</td>
+                                <td>&#8377;1,80,000</td>
+                                <td><span class="status-badge status-pending">In Progress</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-003</td>
+                                <td>Pipeless Filter Set</td>
+                                <td>Hotel Grand</td>
+                                <td>&#8377;45,000</td>
+                                <td><span class="status-badge status-active">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-004</td>
+                                <td>Rooftop Pool Custom</td>
+                                <td>Vikram Singh</td>
+                                <td>&#8377;4,20,000</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Products Tab -->
+                <div id="tab-products" style="display:none;">
+                    <h2 style="margin-bottom:20px;">My Products</h2>
+                    <button class="btn btn-primary" style="margin-bottom:20px;" onclick="alert('Add Product feature - Connect to backend')">
+                        <i class="fas fa-plus"></i> Add New Product
+                    </button>
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Readymade Pool 12x6</td>
+                                <td>Readymade Pool</td>
+                                <td>&#8377;2,50,000</td>
+                                <td>5</td>
+                                <td><a href="#" style="color:#00b4d8;">Edit</a> | <a href="#" style="color:red;">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Luna Luxury Spa 12x8x4.2</td>
+                                <td>Jacuzzi/SPA</td>
+                                <td>&#8377;1,80,000</td>
+                                <td>3</td>
+                                <td><a href="#" style="color:#00b4d8;">Edit</a> | <a href="#" style="color:red;">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Opal Luxury Spa 20x8x4.2</td>
+                                <td>Jacuzzi/SPA</td>
+                                <td>&#8377;2,20,000</td>
+                                <td>2</td>
+                                <td><a href="#" style="color:#00b4d8;">Edit</a> | <a href="#" style="color:red;">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Pipeless Filter Standard</td>
+                                <td>Accessories</td>
+                                <td>&#8377;45,000</td>
+                                <td>15</td>
+                                <td><a href="#" style="color:#00b4d8;">Edit</a> | <a href="#" style="color:red;">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Wall Panels Set</td>
+                                <td>Accessories</td>
+                                <td>&#8377;25,000</td>
+                                <td>20</td>
+                                <td><a href="#" style="color:#00b4d8;">Edit</a> | <a href="#" style="color:red;">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Orders Tab -->
+                <div id="tab-orders" style="display:none;">
+                    <h2 style="margin-bottom:20px;">Order Management</h2>
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Product</th>
+                                <th>Customer</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-001</td>
+                                <td>Jan 15, 2026</td>
+                                <td>Readymade Pool 12x6</td>
+                                <td>Rahul Sharma</td>
+                                <td>&#8377;2,50,000</td>
+                                <td><span class="status-badge status-active">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-002</td>
+                                <td>Jan 12, 2026</td>
+                                <td>Luna Luxury Spa</td>
+                                <td>Priya Gupta</td>
+                                <td>&#8377;1,80,000</td>
+                                <td><span class="status-badge status-pending">In Progress</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-003</td>
+                                <td>Jan 10, 2026</td>
+                                <td>Pipeless Filter Set</td>
+                                <td>Hotel Grand</td>
+                                <td>&#8377;45,000</td>
+                                <td><span class="status-badge status-active">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-004</td>
+                                <td>Jan 8, 2026</td>
+                                <td>Rooftop Pool Custom</td>
+                                <td>Vikram Singh</td>
+                                <td>&#8377;4,20,000</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Inquiries Tab -->
+                <div id="tab-inquiries" style="display:none;">
+                    <h2 style="margin-bottom:20px;">Customer Inquiries</h2>
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jan 15, 2026</td>
+                                <td>Amit Kumar</td>
+                                <td>amit@email.com</td>
+                                <td>Readymade Pool Inquiry</td>
+                                <td><span class="status-badge status-pending">New</span></td>
+                            </tr>
+                            <tr>
+                                <td>Jan 14, 2026</td>
+                                <td>Neha Patel</td>
+                                <td>neha@email.com</td>
+                                <td>Jacuzzi Price Quote</td>
+                                <td><span class="status-badge status-active">Replied</span></td>
+                            </tr>
+                            <tr>
+                                <td>Jan 13, 2026</td>
+                                <td>Resort Group</td>
+                                <td>info@resort.com</td>
+                                <td>Bulk Pool Order</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Profile Tab -->
+                <div id="tab-profile" style="display:none;">
+                    <h2 style="margin-bottom:20px;">My Profile</h2>
+                    <form onsubmit="event.preventDefault();alert('Profile updated!');">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" value="AR Unique Pools" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" value="aruniquepools@gmail.com" placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" value="+91-9068993383" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" value="AR Unique Pools" placeholder="Company Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea rows="3" placeholder="Your Business Address">India</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>AR Unique Pools</h3>
+                <p>India's leading fiberglass composite swimming pool manufacturer.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/aruniquepools" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/aruniquepools" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@aruniquepools" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/919068993383" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="company-detail.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +91-9068993383</p>
+                <p><i class="fas fa-envelope"></i> aruniquepools@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AR Unique Pools. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+function showLogin() {
+    document.getElementById('login-section').style.display = 'block';
+    document.getElementById('register-section').style.display = 'none';
+}
+function showRegister() {
+    document.getElementById('login-section').style.display = 'none';
+    document.getElementById('register-section').style.display = 'block';
+}
+function handleLogin(e) {
+    e.preventDefault();
+    var email = document.getElementById('login-email').value;
+    document.getElementById('login-section').style.display = 'none';
+    document.getElementById('dashboard-section').style.display = 'block';
+    document.getElementById('seller-name').textContent = email.split('@')[0];
+}
+function handleRegister(e) {
+    e.preventDefault();
+    var name = document.getElementById('reg-name').value;
+    alert('Registration successful! Welcome, ' + name + '. Please login.');
+    showLogin();
+}
+function handleLogout() {
+    document.getElementById('dashboard-section').style.display = 'none';
+    document.getElementById('login-section').style.display = 'block';
+    document.getElementById('login-email').value = '';
+    document.getElementById('login-password').value = '';
+}
+function showTab(tab) {
+    var tabs = ['overview','products','orders','inquiries','profile'];
+    tabs.forEach(function(t) {
+        document.getElementById('tab-' + t).style.display = t === tab ? 'block' : 'none';
+    });
+    var links = document.querySelectorAll('.dashboard-sidebar a');
+    links.forEach(function(link) { link.classList.remove('active'); });
+    event.target.closest('a').classList.add('active');
+}
+</script>
+</body>
+</html>
